@@ -1,0 +1,10 @@
+.CardHeaderBox{
+    overflow: hidden;
+    .cardImg{
+        object-fit: contain;
+        transition: transform .5s ease-in-out;
+    }
+    &:hover > .cardImg{
+        transform: scale(1.01);
+    }
+}
