@@ -1,6 +1,5 @@
 .productCardBox {
-  width: 250px;
-  //   height: 319px;
+  width: 235px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,7 +8,6 @@
   position: relative;
   background: #ffff;
   border: 1px solid #f2f2f4;
-  margin: 3em;
   transition: box-shadow 0.5s ease-in-out;
   -webkit-user-select: none;
   -moz-user-select: none;

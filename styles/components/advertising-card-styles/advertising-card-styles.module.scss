@@ -1,0 +1,46 @@
+.AdvertisingCardBox {
+  // width: 250px;
+  width:234px;
+  min-height:355px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 25px;
+  gap: 10px;
+  position: relative;
+  background: #ffff;
+  transition: box-shadow 0.5s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  &:hover {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.24);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .AdvertisingCardTitle {
+    font-size: 1.5rem;
+    color: #ffff;
+    z-index: 2;
+  }
+  .AdvertisingCardLink {
+    position: absolute;
+    bottom: 1rem;
+    font-size: 0.9rem;
+    color: #ffff;
+    text-decoration: underline;
+    z-index: 2;
+    cursor: pointer;
+  }
+}
