@@ -1,7 +1,10 @@
 .CardHeaderBox{
+    width: 150px;
+    height: 160px;
     overflow: hidden;
     .cardImg{
         object-fit: contain;
+        object-position: center;
         transition: transform .5s ease-in-out;
     }
     &:hover > .cardImg{
