@@ -1,31 +1,7 @@
 /*  media  */
 
-@mixin for-desktop($min-size) {
-    @media screen and (min-width: $min-size) {
-        @content;
-    }
-}
-
-@mixin for-laptop($min-size) {
-    @media screen and (min-width: $min-size) {
-        @content;
-    }
-}
-
-@mixin for-tablet($min-size) {
-    @media screen and (min-width: $min-size) {
-        @content;
-    }
-}
-
-@mixin for-large-phone($min-size) {
-    @media screen and (min-width: $min-size) {
-        @content;
-    }
-}
-
-@mixin for-small-phone($min-size) {
-    @media screen and (min-width: $min-size) {
+@mixin Media($device) {
+    @media screen and (max-width : $device) {
         @content;
     }
 }

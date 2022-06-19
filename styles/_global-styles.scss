@@ -43,5 +43,18 @@
 ////////////////////////////////
 
 .container-fluid {
-    max-width: var();
+    margin   : auto;
+    max-width: 1400px;
+    padding  : 0 20px 0;
+
+    @include Media($screen-large-phone) {
+        padding-left : 14px;
+        padding-right: 14px;
+    }
+}
+
+.fb-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
