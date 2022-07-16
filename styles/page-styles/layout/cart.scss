@@ -1,0 +1,81 @@
+.css-advny6-MuiPopper-root {
+    z-index: 1001;
+    width  : 310px;
+
+    .drop-down {
+        background-color: $color-11;
+        box-shadow      : $shadow-1;
+
+        &__header {
+            padding      : 20px 0 23px;
+            border-bottom: 1px solid $color-6;
+
+            &__count {
+                margin     : 6px 0 18px;
+                font-weight: 400;
+                font-size  : 12px;
+                line-height: 18px;
+                color      : $color-5;
+            }
+        }
+
+        &__empty-cart-p {
+            padding-top: 70px;
+            text-align: center;
+        }
+
+        &__cart-items {
+            height: 220px;
+
+            & .scroll-bar {
+                height: 220px;
+                // display: flex;
+                // flex-direction: column;
+            
+            }
+
+            &__item {
+                padding: 15px 24px 23px 15px;
+                gap    : 4px;
+
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid $color-6;
+                }
+                
+                &__title {
+                    flex-grow  : 1;
+                    font-weight: 400;
+                    font-size  : 13px;
+                    line-height: 20px;
+                }
+                
+                &__actions {
+                    align-self: stretch;
+                    height    : 100%;
+                    
+                    svg {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        
+        &__total {
+            border-top: 1px solid $color-6;
+
+            font-weight: 600;
+            font-size  : 14px;
+            line-height: 140%;
+            color      : $color-5;
+            padding: 16px 0;
+            text-align: center;
+            
+            strong {
+                font-weight: 600;
+                font-size  : 18px;
+                line-height: 140%;
+                color      : $color-7;
+            }
+        }
+    }
+}

@@ -1,20 +1,28 @@
-import React ,{useState} from 'react';
-import  styles  from "../../../styles/components/product-card-styles/card-footer-styles/card-footer-styles.module.scss";
-import Rating from "@mui/material/Rating";
-import { FcLike, FcLikePlaceholder } from "react-icons/fc";
+import React, { useState } from 'react';
 
-function CardFooter({ rating = 0, title, oldPrise = null, nowPrise ,isLike}) {
-    const [value, setvalue] = useState(rating);
-    const [like, setlike] = useState(isLike);
+import styles from '../../../styles/components/product-card-styles/card-footer-styles/card-footer-styles.module.scss';
+import Rating from '@mui/material/Rating';
+import { FcLike, FcLikePlaceholder } from 'react-icons/fc';
+import CursoredLink from '../../shared/cursored-link';
+import Link from 'next/link'
+
+// prettier-ignore
+function CardFooter({ rating = 0, title, oldPrise = null, nowPrise, isLike, id = '' }) {
+  const [value, setvalue] = useState(rating);
+  const [like, setlike] = useState(isLike);
   return (
     <div className={styles.CardFooterBox}>
       <div className={styles.cardFooterRating}>
         <Rating name="no-value" size="small" value={value} />
-        <p>Rewiews ({rating})</p>
+        <p>Reviews ({rating})</p>
       </div>
-      <div className={styles.cardFooterTitle}>
-        <p>{title}</p>
-      </div>
+
+      <Link href={`/product/${id}`}>
+        <div className={styles.cardFooterTitle}>
+          <p>{title}</p>
+        </div>
+      </Link>
+
       <div className={styles.CardFooterPrice}>
         {oldPrise ? <p className={styles.oldPrise}>{oldPrise}</p> : null}
         <div className={styles.priceLike}>

@@ -5,10 +5,18 @@ const nextConfig = {
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
+      use: ['@svgr/webpack'],
     });
 
     return config;
+  },
+  images: {
+    domains: [
+      'www.downloadclipart.net',
+      's3-alpha-sig.figma.com',
+      'www.asus.com',
+      'www.cyberpowersystem.co.uk',
+    ],
   },
 };
 

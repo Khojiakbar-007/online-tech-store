@@ -1,0 +1,88 @@
+#product-page {
+    background-color: var(--color-1);
+
+    .price-box {
+        background-color: var(--color-11);
+        border-bottom          : 1px solid rgba($color: #000000, $alpha: 0.2);
+
+        .container-fluid {
+            height: 85px;
+
+            .about {
+                font-weight  : 600;
+                font-size    : 14px;
+                line-height  : 21px;
+                border-bottom: 2px solid var(--color-3);
+            }
+
+            .price-quantity {
+                .price {
+                    font-weight: 400;
+                    font-size  : 14px;
+                    line-height: 21px;
+
+                    strong {
+                        font-weight: 600;
+                    }
+                }
+
+                .MuiFilledInput-root {
+                    width           : 70px;
+                    height          : 43px;
+                    background-color: var(--color-1);
+                    margin          : 0 21px;
+
+                    .MuiFilledInput-input {
+                        padding-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    #product-detail {
+        padding: 40px 0 40px;
+
+        .product-details {
+            max-width: 550px;
+            padding: 15px 0;
+
+            h2 {
+                margin-bottom: 13px;
+            }
+
+            .review-request {
+                margin-bottom: 24px;
+                font-weight  : 400;
+                font-size    : 12px;
+                line-height  : 18px;
+                color        : $color-3;
+                display: block;
+            }
+
+            .desc {
+                font-weight  : 300;
+                font-size    : 18px;
+                line-height  : 30px;
+                margin-bottom: 30px;
+            }
+
+            .question {
+                font-weight: 600;
+                font-size  : 12px;
+                line-height: 18px;
+            }
+
+            .some-text {
+                font-weight: 300;
+                font-size  : 12px;
+                line-height: 18px;
+            }
+        }
+
+        .image-container {
+            margin-left: 180px;
+            height: 300px;
+        }
+    }
+}

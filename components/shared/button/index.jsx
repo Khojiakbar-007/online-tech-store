@@ -1,34 +1,36 @@
-import Link from "next/link";
-// import { styled } from "@mui/material/styles";
-import { Button, IconButton } from "@mui/material";
+import { Button, IconButton } from '@mui/material';
+import Linker from './utility';
 
 function CustomButton({
-  type = "button" /* "icon-button" - II */,
-  variant = "text",
-  href = "",
+  type = 'button' /* "icon-button" - II */,
+  variant = 'text',
+  href,
   extraStyles = {},
   children,
+  onClick = null,
 }) {
   return (
-    <Link href={href}>
-      {type === "button" ? (
+    <Linker href={href}>
+      {type === 'button' ? (
         <Button
-          sx={{ color: "black", textTransform: "capitalize", ...extraStyles }}
+          sx={{ color: 'black', textTransform: 'capitalize', ...extraStyles }}
           variant={variant}
           component="span"
+          onClick={onClick}
         >
           {children}
         </Button>
       ) : (
         <IconButton
-          sx={{ color: "black", textTransform: "capitalize", ...extraStyles }}
+          sx={{ color: 'black', textTransform: 'capitalize', ...extraStyles }}
           variant={variant}
           component="span"
+          onClick={onClick}
         >
           {children}
         </IconButton>
       )}
-    </Link>
+    </Linker>
   );
 }
 

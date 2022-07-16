@@ -40,6 +40,15 @@
     text-transform: capitalize;
 }
 
+.margin-centre {
+    margin-left : auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
 ////////////////////////////////
 
 .container-fluid {
@@ -51,10 +60,85 @@
         padding-left : 14px;
         padding-right: 14px;
     }
+
+    &--2 {
+        margin   : auto;
+        max-width: 1400px;
+        padding  : 0 140px 0;
+
+
+        @include Media($screen-tablet) {
+            padding-left : 55px;
+            padding-right: 55px;
+        }
+
+        @include Media($screen-large-phone) {
+            padding-left : 24px;
+            padding-right: 24px;
+        }
+    }
+}
+
+h2 {
+    font-weight: 600;
+    font-size  : 32px;
+    line-height: 48px;
+}
+
+h3 {
+    font-style : normal;
+    font-weight: 600;
+    font-size  : 22px;
+    line-height: 33px;
+}
+
+h4 {
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 18px;
+    line-height: 132.5%;
 }
 
 .fb-row {
-    display: flex;
-    align-items: center;
+    display        : flex;
+    align-items    : center;
     justify-content: space-between;
+
+    &--left {
+        @extend .fb-row;
+        align-items    : flex-start;
+        justify-content: left;
+    }
+
+    &--right {
+        @extend .fb-row;
+        align-items    : flex-start;
+        justify-content: right;
+    }
+
+    &--spacer {
+        @extend .fb-row;
+        justify-content: space-around;
+    }
+
+    &--center {
+        @extend .fb-row;
+        justify-content: center;
+
+        &--wrap {
+            @extend .fb-row--center;
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.fb--align-items--center {
+    align-items: center;
+}
+
+.fb-col {
+    display           : flex;
+    flex-direction    : column;
+    // justify-content: ;
+    align-items       : center;
 }

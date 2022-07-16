@@ -12,13 +12,18 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.4",
+    "@mui/x-data-grid": "^5.12.3",
     "@svgr/webpack": "^6.2.1",
+    "immer": "^9.0.15",
     "next": "12.1.6",
     "node-sass": "^7.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",
-    "slick-carousel": "^1.8.1"
+    "react-slick": "^0.29.0",
+    "simplebar-react": "^2.4.1",
+    "slick-carousel": "^1.8.1",
+    "use-debounce": "^8.0.1"
   },
   "devDependencies": {
     "eslint": "8.18.0",

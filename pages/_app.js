@@ -1,11 +1,14 @@
-import Layout from "../components/layout";
-import "../styles/index.scss";
+import Layout from '../components/layout';
+import CartContextProvider from '../context-provider';
+import '../styles/index.scss';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CartContextProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CartContextProvider>
   );
 }
 
