@@ -2,9 +2,15 @@ import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { useMemo, useState } from 'react';
 
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 // import Image from 'next/image';
 import { getProductData, useAddItemToCart } from '../../utils/context-utils';
+import {
+  defaultTitle,
+  defaultSep,
+  productDescription,
+} from '../../shared/constants';
 
 function ProductPage({ product }) {
   const { query } = useRouter();
@@ -22,11 +28,15 @@ function ProductPage({ product }) {
 
   const handleAddToCart = () => {
     if (Number.isFinite(quantity)) addToCart(productWithId, quantity);
-    // else
   };
 
   return (
     <main id="product-page">
+      <Head>
+        <meta name="description" content={`${title} ${productDescription}`} />
+        <title>{defaultTitle + defaultSep + title}</title>
+      </Head>
+
       <div className="price-box">
         <div className="container-fluid fb-row">
           <span className="about">About Product</span>
@@ -84,7 +94,7 @@ function ProductPage({ product }) {
 
 export default ProductPage;
 
-export const getServerSideProps = ({ query }) => {
+export const getServerSideProps = async ({ query }) => {
   return {
     props: {
       product: getProductData(query.productId),

@@ -1,9 +1,8 @@
 import DeleteIcon from '../../public/icons/delete--big.svg';
 import { TextField } from '@mui/material';
 import { useDebouncedCallback } from 'use-debounce';
-import { useUpdateItemInCart } from '../../utils/context-utils';
 
-export const columns = removeItem => [
+export const columns = (removeItem, updateCartDebouncedly) => [
   {
     field: 'imgUrl',
     headerName: 'Item',
@@ -13,6 +12,7 @@ export const columns = removeItem => [
           // style={{ marginLeft: '-18px' }}
           src={params.row.imgUrl}
           width="120px"
+          alt="tech item"
         />
       );
     },
@@ -33,14 +33,8 @@ export const columns = removeItem => [
     headerName: 'Qty',
     // prettier-ignore
     renderCell: (params) => {
-      const updateItemInCart = useUpdateItemInCart();
-
-      const debouncedUpdate = useDebouncedCallback((quantity) => {
-        updateItemInCart(params.row.id, quantity);
-      }, 500)
-
       return (
-        <TextField variant='filled' type="number" onChange={(e) => debouncedUpdate(e.target.value)} 
+        <TextField onChange={(e) => updateCartDebouncedly(params.row.id, e.target.value)} variant='filled' type="number"
           defaultValue={params.row.quantity} inputProps={{ inputMode: 'numeric', pattern: '[0-9]*', max: 999, min: 1/* , value: quantity */ }}
         />
       )

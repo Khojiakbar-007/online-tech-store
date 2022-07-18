@@ -1,16 +1,20 @@
-import { useRouter } from 'next/router';
+import Head from 'next/head';
 import ProductCard from '../../components/product-card';
+
 import * as allProducts from '../../fake-data';
+import { defaultSep, defaultTitle, pageDescription, titles } from '../../shared/constants';
 
-const CatalogPage = () => {
-  const {
-    query: { catalogItem = '' },
-  } = useRouter();
-  // const routeProps = useRouter();
-  // console.log('router props: ', routeProps);
-
+const CatalogPage = ({ catalogItem, products }) => {
   return (
     <main id="catalog-page">
+      <Head>
+        <meta
+          name="description"
+          content={`${titles[catalogItem]} ${pageDescription}`}
+        />
+        <title>{titles[catalogItem] + defaultSep + defaultTitle}</title>
+      </Head>
+
       <div className="container-fluid" style={{ marginBottom: '30px' }}>
         <h3
           className="text-center"
@@ -20,7 +24,7 @@ const CatalogPage = () => {
         </h3>
 
         <div className="container fb-row--center--wrap" style={{ gap: '8px' }}>
-          {allProducts[catalogItem]?.map((prod, i) => (
+          {products.map((prod, i) => (
             <ProductCard key={i} data={prod} />
           ))}
         </div>
@@ -31,4 +35,25 @@ const CatalogPage = () => {
 
 export default CatalogPage;
 
-// export const getStaticProps = () => '';
+export const getStaticProps = async ({ params }) => {
+  const { catalogItem } = params;
+  return {
+    props: {
+      catalogItem,
+      products: allProducts[catalogItem],
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const categories = ['laptops', 'desktops', 'customBuilds', 'monitors'];
+
+  const paths = categories.map(category => ({
+    params: { catalogItem: category },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};

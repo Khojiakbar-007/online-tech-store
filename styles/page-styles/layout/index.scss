@@ -2,6 +2,14 @@ body {
     position: relative;
 }
 
+.app-scrollbar {
+    height: 100vh;
+
+    .simplebar-track.simplebar-vertical {
+        right: 1px;
+    }
+}
+
 #top-header {
     font-weight     : 600;
     font-size       : 12px;

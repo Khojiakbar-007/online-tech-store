@@ -98,7 +98,7 @@ function Footer() {
                 >
                   xxomniknightxoji@gmail.com
                 </a>
-                , [Erkin aka, qo'shvorarsiz]
+                , [Erkin aka, qo&apos;shvorarsiz]
               </li>
             </ul>
           </div>

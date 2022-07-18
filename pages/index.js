@@ -117,6 +117,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <h2>{process.env.nimadir}</h2>
     </main>
   );
 }
