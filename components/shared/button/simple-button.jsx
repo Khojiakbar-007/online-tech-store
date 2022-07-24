@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import Link from 'next/link';
 
-const SimpleButton = ({ inverted, fullWidth, children, href }) => {
+const SimpleButton = ({ inverted, fullWidth, children, href, width, height }) => {
   let styles = {
     backgroundColor: 'var(--color-3)',
     color: 'var(--color-11)',
@@ -28,6 +28,9 @@ const SimpleButton = ({ inverted, fullWidth, children, href }) => {
     };
 
   if (fullWidth) styles.width = 'calc(100% - 60px)';
+
+  if (width) styles.width = width;
+  if (height) styles.height = height;
 
   // let childs = children;
   if (href)

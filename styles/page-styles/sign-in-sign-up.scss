@@ -1,0 +1,36 @@
+#sign-in-sign-up {
+    .container-fluid--2 {
+        gap        : 36px;
+        font-weight: 300;
+        font-size  : 14px;
+        line-height: 30px;
+
+        .signing-card {
+            min-height: 415.46px;
+            padding   : 37px 57.5px 41px;
+            background: $color-1;
+
+            flex-grow: 1;
+
+            h4 {
+                font-weight: 600;
+            }
+
+            p {
+                margin: 18px 0;
+            }
+
+            &.sign-up {
+                ul {
+                    line-height: 20px;
+
+                    li::before {
+                        content: '•';
+                        display: inline-block;
+                        margin-right: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

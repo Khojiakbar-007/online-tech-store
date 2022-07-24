@@ -5,11 +5,13 @@ import Header from './header';
 
 function Layout({ children }) {
   return (
-    <SimpleBar className="app-scrollbar">
-      <Header />
-      {children}
-      <Footer />
-    </SimpleBar>
+    <>
+      <SimpleBar className="app-scrollbar">
+        <Header />
+        {children}
+        <Footer />
+      </SimpleBar>
+    </>
   );
 }
 

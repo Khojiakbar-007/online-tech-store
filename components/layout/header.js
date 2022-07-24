@@ -1,12 +1,11 @@
 import React from 'react';
 import CustomButton from '../shared/button';
-import { Avatar } from '@mui/material';
 
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 import Logo from '../../public/Logo.svg';
 import SearchIcon from '../../public/icons/search.svg';
-import { TiUser } from 'react-icons/ti';
 import CartIcon from './cart-icon';
+import UserIcon from './user-icon';
 
 const customStyles = {
   fontStyle: 'normal',
@@ -61,15 +60,7 @@ function Header() {
                 <SearchIcon />
               </CustomButton>
               <CartIcon />
-              <Avatar
-                sx={{
-                  backgroundColor: 'var(--color-3)',
-                  width: '36px',
-                  height: '36px',
-                }}
-              >
-                <TiUser />
-              </Avatar>
+              <UserIcon />
             </div>
           </div>
         </nav>
