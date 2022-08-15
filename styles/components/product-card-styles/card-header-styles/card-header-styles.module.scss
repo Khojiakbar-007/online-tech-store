@@ -1,13 +1,14 @@
-.CardHeaderBox{
-    width: 150px;
-    height: 160px;
+.CardHeaderBox {
+    width   : 150px;
+    height  : 160px;
     overflow: hidden;
-    .cardImg{
-        object-fit: contain;
-        object-position: center;
+    position: relative;
+
+    .cardImg {
         transition: transform .5s ease-in-out;
     }
-    &:hover > .cardImg{
-        transform: scale(1.01);
+
+    &:hover .cardImg {
+        transform: scale(1.03);
     }
 }

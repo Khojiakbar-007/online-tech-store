@@ -1,8 +1,19 @@
-.css-advny6-MuiPopper-root {
-    z-index: 1001;
-    width  : 310px;
+// .css-advny6-MuiPopper-root {
+// .cart-menu .MuiMenu-paper {
+.MuiList-root {
+    background-color: #086dc5;
 
+    .MuiMenuItem-root {
+        &:hover {
+            background-color: #f5f5f5;
+        }
+    }
+}
+
+.cart-menu-modal {
     .drop-down {
+        z-index         : 1001;
+        width           : 310px;
         background-color: $color-11;
         box-shadow      : $shadow-1;
 
@@ -21,17 +32,18 @@
 
         &__empty-cart-p {
             padding-top: 70px;
-            text-align: center;
+            text-align : center;
         }
 
         &__cart-items {
             height: 220px;
+            overflow-y: auto;
 
             & .scroll-bar {
-                height: 220px;
+                height           : 220px;
                 // display: flex;
                 // flex-direction: column;
-            
+
             }
 
             &__item {
@@ -41,25 +53,25 @@
                 &:not(:last-of-type) {
                     border-bottom: 1px solid $color-6;
                 }
-                
+
                 &__title {
                     flex-grow  : 1;
                     font-weight: 400;
                     font-size  : 13px;
                     line-height: 20px;
                 }
-                
+
                 &__actions {
                     align-self: stretch;
                     height    : 100%;
-                    
+
                     svg {
                         cursor: pointer;
                     }
                 }
             }
         }
-        
+
         &__total {
             border-top: 1px solid $color-6;
 
@@ -67,9 +79,9 @@
             font-size  : 14px;
             line-height: 140%;
             color      : $color-5;
-            padding: 16px 0;
-            text-align: center;
-            
+            padding    : 16px 0;
+            text-align : center;
+
             strong {
                 font-weight: 600;
                 font-size  : 18px;

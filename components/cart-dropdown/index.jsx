@@ -1,9 +1,6 @@
-import SimpleBar from 'simplebar-react';
-import Link from 'next/link';
-
 import { useUtilFunctions } from '../../utils/context-utils';
 import SimpleButton from '../shared/button/simple-button';
-import DropDownItem from './cart-item';
+import CartItems from './cart-items';
 
 const CartDropDown = ({ cartItems, countItemsInCart }) => {
   const countTotalSum = useUtilFunctions('countTotalSum');
@@ -24,21 +21,7 @@ const CartDropDown = ({ cartItems, countItemsInCart }) => {
       </div>
 
       <div className="drop-down__cart-items">
-        {cartItems.length > 0 ? (
-          <SimpleBar className="scroll-bar">
-            {cartItems.map(item => (
-              <DropDownItem key={item.id} item={item} />
-            ))}
-          </SimpleBar>
-        ) : (
-          <p className="drop-down__empty-cart-p">Your cart is empty.</p>
-        )}
-        {/* <div className="drop-down__cart-items__item">
-          EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
-        </div>
-        <div className="drop-down__cart-items__item">
-          EX DISPLAY : MSI Pro 16 Flex-036AU 15.6 MULTITOUCH All-In-On...
-        </div> */}
+        <CartItems cartItems={cartItems}/>
       </div>
 
       <div className="drop-down__total">

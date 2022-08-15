@@ -1,4 +1,14 @@
 #home-page {
+    padding: 0 20px;
+
+    .showcase .container-fluid {
+        width     : 100%;
+        min-height: 82px;
+        height    : 328px;
+
+        padding: 0;
+    }
+
     .new-products {
         margin-bottom: 45px;
 
@@ -21,7 +31,7 @@
         margin-bottom: 42px;
 
         .logo {
-            width: 194px;
+            width : 194px;
             height: 150px;
         }
     }

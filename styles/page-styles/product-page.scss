@@ -81,8 +81,10 @@
         }
 
         .image-container {
-            margin-left: 180px;
+            margin-left: 20px;
+            flex-shrink: 0;
             height: 300px;
+            width: 300px;
         }
     }
 }

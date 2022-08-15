@@ -1,7 +1,12 @@
 import produce from 'immer';
 import { useMemo } from 'react';
 
-import { useCartActionsContext, useCartContext } from '../../context-provider';
+import {
+  useCartActionsContext,
+  useCartContext,
+  useUserActionsContext,
+  useUserContext,
+} from '../../context-provider';
 import { allProductsNormalized } from '../../fake-data';
 
 const getProductData = productId => {
@@ -108,10 +113,24 @@ const useUtilFunctions = funcType => {
   }
 };
 
+const useLogOut = () => {
+  const { isSignedIn } = useUserContext();
+  const { setIsSignedIn, setUserDetails } = useUserActionsContext();
+
+  const logOut = () => {
+    if (!isSignedIn) return;
+    setIsSignedIn(false);
+    setUserDetails(null);
+  };
+
+  return logOut;
+};
+
 export {
   getProductData,
   useAddItemToCart,
   useUpdateItemInCart,
   useRemoveWholeItemFromCart,
   useUtilFunctions,
+  useLogOut,
 };

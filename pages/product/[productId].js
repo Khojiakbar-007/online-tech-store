@@ -4,7 +4,8 @@ import { useMemo, useState } from 'react';
 
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-// import Image from 'next/image';
+import Image from 'next/image';
+
 import { getProductData, useAddItemToCart } from '../../utils/context-utils';
 import {
   defaultTitle,
@@ -64,7 +65,7 @@ function ProductPage({ product }) {
         </div>
       </div>
       <section id="product-detail">
-        <div className="container-fluid--2 fb-row--left fb--align-items--center">
+        <div className="container-fluid--2 fb-row fb--align-items--center">
           <div className="product-details">
             <h2>{title}</h2>
             <span className="review-request">
@@ -82,9 +83,8 @@ function ProductPage({ product }) {
           </div>
 
           {/* prettier-ignore */}
-          <div className="image-container">
-            {/* <Image src={imgUrl} alt={'electronic device'} width={300} height={300} quality={100} priority/> */}
-            <img src={imgUrl} alt={'electronic device'} height={300}/>
+          <div className="image-container pos-rel">
+            <Image src={imgUrl} layout="fill" objectFit="contain" quality={100} priority alt={'electronic device'}/>
           </div>
         </div>
       </section>

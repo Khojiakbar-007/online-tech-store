@@ -1,7 +1,7 @@
 .AdvertisingCardBox {
   // width: 250px;
   width              : 234px;
-  min-height         : 355px;
+  min-height         : 330px;
   display            : flex;
   flex-direction     : column;
   align-items        : center;
@@ -30,6 +30,14 @@
     right           : 0;
     bottom          : 0;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .BackImage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .AdvertisingCardTitle {

@@ -1,7 +1,8 @@
 import { Button } from '@mui/material';
 import Link from 'next/link';
 
-const SimpleButton = ({ inverted, fullWidth, children, href, width, height }) => {
+// prettier-ignore
+const SimpleButton = ({ inverted, fullWidth, children, href, width, height, ...rest }) => {
   let styles = {
     backgroundColor: 'var(--color-3)',
     color: 'var(--color-11)',
@@ -35,7 +36,7 @@ const SimpleButton = ({ inverted, fullWidth, children, href, width, height }) =>
   // let childs = children;
   if (href)
     return (
-      <Button variant="contained" sx={styles}>
+      <Button {...rest} variant="contained" sx={styles}>
         <Link href={href}>
           <span>{children}</span>
         </Link>
@@ -43,7 +44,7 @@ const SimpleButton = ({ inverted, fullWidth, children, href, width, height }) =>
     );
 
   return (
-    <Button variant="contained" sx={styles}>
+    <Button {...rest} variant="contained" sx={styles}>
       {children}
     </Button>
   );

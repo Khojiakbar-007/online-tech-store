@@ -1,16 +1,22 @@
 #sign-in-sign-up {
+    h2 {
+        margin    : 30px 0 40px;
+        text-align: center;
+    }
+
     .container-fluid--2 {
         gap        : 36px;
         font-weight: 300;
         font-size  : 14px;
         line-height: 30px;
+        margin-bottom: 58px;
 
         .signing-card {
-            min-height: 415.46px;
+            min-height: 495px;
             padding   : 37px 57.5px 41px;
             background: $color-1;
 
-            flex-grow: 1;
+            width: 50%;
 
             h4 {
                 font-weight: 600;
@@ -22,14 +28,49 @@
 
             &.sign-up {
                 ul {
-                    line-height: 20px;
+                    line-height  : 20px;
+                    margin-bottom: 20px;
 
                     li::before {
-                        content: '•';
-                        display: inline-block;
+                        content     : '•';
+                        display     : inline-block;
                         margin-right: 8px;
                     }
                 }
+
+                form.fb-col {
+                    align-items   : flex-start;
+
+                    .MuiTextField-root {
+                        width        : 100%;
+                        margin-bottom: 20px;
+
+                        .MuiOutlinedInput-root {
+
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+
+            &.sign-in {
+                form.fb-col {
+                    align-items   : flex-start;
+
+                    .MuiTextField-root {
+                        width        : 100%;
+                        margin-bottom: 20px;
+
+                        .MuiOutlinedInput-root {
+
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+
+            .MuiOutlinedInput-root {
+                background: $color-11;
             }
         }
     }

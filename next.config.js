@@ -15,10 +15,7 @@ const nextConfig = phase => {
     },
     images: {
       domains: [
-        'www.downloadclipart.net',
-        's3-alpha-sig.figma.com',
-        'www.asus.com',
-        'www.cyberpowersystem.co.uk',
+        'images2.imgbox.com'
       ],
     },
   };

@@ -50,7 +50,10 @@ body {
 
         .container-fluid {
             height: 92px;
+        }
 
+        .logo {
+            width: 112px;
         }
 
         .main-nav {
@@ -73,6 +76,13 @@ body {
                 line-height: 15px;
             }
         }
+    }
+}
+
+.user-menu-modal {
+    .MuiMenuItem-root {
+        background-color: #fff;
+
     }
 }
 
@@ -122,7 +132,8 @@ body {
 }
 
 #placeholder {
-    margin: 60px 0 43px;
+    padding         : 60px 0 43px;
+    background-color: $color-1;
 
     .mini-card {
         text-align: center;

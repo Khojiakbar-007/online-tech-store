@@ -1,12 +1,13 @@
 import Head from 'next/head';
+import { SessionProvider } from 'next-auth/react';
 
 import Layout from '../components/layout';
 import CartContextProvider from '../context-provider';
 import '../styles/index.scss';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: { session, ...otherPageProps } }) {
   return (
-    <CartContextProvider>
+    <>
       <Head>
         <title>Online Tech Store</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -20,10 +21,15 @@ function MyApp({ Component, pageProps }) {
 
         <link rel="icon" href="/Logo.svg" type="image/svg" />
       </Head>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </CartContextProvider>
+
+      <SessionProvider session={session}>
+        <CartContextProvider>
+          <Layout>
+            <Component {...otherPageProps} />
+          </Layout>
+        </CartContextProvider>
+      </SessionProvider>
+    </>
   );
 }
 

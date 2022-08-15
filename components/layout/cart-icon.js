@@ -1,38 +1,39 @@
 import CustomButton from '../shared/button';
 import ShoppingCart from '../../public/icons/shopping-cart.svg';
 import { useState } from 'react';
-import { Popper, Fade, Badge } from '@mui/material';
+import { Badge, Menu } from '@mui/material';
 import CartDropDown from '../cart-dropdown';
 import { useCartContext } from '../../context-provider';
 import { useUtilFunctions } from '../../utils/context-utils';
 
 const CartIcon = () => {
-  const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const { cartItems } = useCartContext();
   const countItemsInCart = useUtilFunctions('countItemsInCart');
 
   const handleClick = e => {
-    if (!anchorEl) setAnchorEl(e.currentTarget);
-    setOpen(prevOpen => !prevOpen);
+    setAnchorEl(e.target);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   return (
-    <CustomButton onClick={handleClick} type="icon-button">
-      <Badge badgeContent={countItemsInCart()} color="primary">
-        <ShoppingCart />
-      </Badge>
+    <>
+      <CustomButton onClick={handleClick} type="icon-button">
+        <Badge badgeContent={countItemsInCart()} color="primary">
+          <ShoppingCart />
+        </Badge>
+      </CustomButton>
 
-      <Popper open={open} anchorEl={anchorEl} placement="bottom-end" transition>
-        {({ TransitionProps }) => (
-          <Fade {...TransitionProps} timeout={300}>
-            <span>
-              <CartDropDown countItemsInCart={countItemsInCart} cartItems={cartItems} />
-            </span>
-          </Fade>
-        )}
-      </Popper>
-    </CustomButton>
+      <Menu open={!!anchorEl} anchorEl={anchorEl} onClose={handleClose} className='cart-menu-modal'>
+        <CartDropDown
+          countItemsInCart={countItemsInCart}
+          cartItems={cartItems}
+        />
+      </Menu>
+    </>
   );
 };
 
