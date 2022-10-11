@@ -22,8 +22,8 @@ export const authConfig = {
         const account = existingAccounts.find(acc => acc.email === email);
 
         if (!account) {
-          console.log('No account found!');
-          throw new Error('No account found!');
+          console.log('No account found! ERRRRROOOOOOOORRRRRR!!!!!!');
+          // throw new Error('No account found!');
         }
 
         const isValid = verifyPassword(password, account.password);

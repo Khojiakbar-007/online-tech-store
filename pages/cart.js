@@ -17,7 +17,7 @@ const CartPage = () => {
       '--table-height',
       `calc(${numberOfItems} * 170px + 56px)`
     );
-  }, [tableContainerRef.current, numberOfItems]);
+  }, [numberOfItems]);
 
   const countTotalSum = useUtilFunctions('countTotalSum');
 
