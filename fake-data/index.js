@@ -391,7 +391,7 @@ const monitors = [
   },
   {
     id: 40,
-    imgUrl: ' https://images2.imgbox.com/53/38/RoUDgTNu_o.png',
+    imgUrl: 'https://images2.imgbox.com/53/38/RoUDgTNu_o.png',
     rating: 2,
     title: 'ROG SWIFT PG258Q ',
     nowPrice: '$219',

@@ -57,17 +57,3 @@ export async function getServerSideProps({ req, res }) {
 }
 
 export default SignInSignUpPage;
-
-// PLAN //
-/**
- * Sign up page ✅
- * Send name, email and password of user to my backend next api with axios ✅
- * Store user data in my database ✅
- * -> KEEP watching videos
- * maybe, I will get authorised or unauthorised state (in context) and change menu showing favourites ✅
- * Video: Authorization token
- * Block some protected (favourites) pages ✅
- *
- * Read up whole documentation [only necessary parts (interesting parts ;) )]
- * TypeScript basics
- */

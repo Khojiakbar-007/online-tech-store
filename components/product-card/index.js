@@ -3,9 +3,9 @@ import CardHeader from './card-header/CardHeader';
 import styles from '../../styles/components/product-card-styles/product-card-styles.module.scss';
 // import CursoredLink from '../shared/cursored-link';
 
-function ProductCard({ data }) {
+function ProductCard({ data, containerStyles }) {
   return (
-    <div className={styles.productCardBox}>
+    <div className={styles.productCardBox} style={containerStyles || {}}>
       <CardHeader href={`/product/${data?.id}`} imgUrl={data?.imgUrl} />
       <CardFooter
         rating={data?.rating}

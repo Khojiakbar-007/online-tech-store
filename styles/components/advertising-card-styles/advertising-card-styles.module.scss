@@ -1,6 +1,10 @@
+@import '../../mixin-for-responsive';
+@import '../../variables-sass';
+
 .AdvertisingCardBox {
   // width: 250px;
   width              : 234px;
+  min-width          : 160px;
   min-height         : 330px;
   display            : flex;
   flex-direction     : column;
@@ -34,10 +38,10 @@
 
   .BackImage {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top     : 0;
+    right   : 0;
+    bottom  : 0;
+    left    : 0;
   }
 
   .AdvertisingCardTitle {
@@ -46,7 +50,7 @@
     line-height: 130%;
     color      : #ffff;
     z-index    : 2;
-    cursor         : pointer;
+    cursor     : pointer;
   }
 
   .AdvertisingCardLink {
@@ -57,5 +61,22 @@
     text-decoration: underline;
     z-index        : 2;
     cursor         : pointer;
+  }
+
+  @include Media($screen-small-phone) {
+    width          : 100%;
+    min-height     : unset;
+    height         : 82px;
+    justify-content: initial;
+    flex-wrap      : wrap;
+
+
+    .AdvertisingCardTitle {
+      font-size: 18px;
+    }
+
+    .AdvertisingCardLink {
+      font-size: 12px;
+    }
   }
 }

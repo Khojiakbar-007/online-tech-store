@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import Carousel from '../components/carousel';
 import ProductCard from '../components/product-card';
 import AdvertisingCard from '../components/advertising-card';
@@ -21,13 +20,12 @@ import adImg4 from '../public/images/advertising-4.png';
 const logoImageIndex = ['', '-1', '-2', '-3', '-4', '-5', '-6'];
 
 export default function Home() {
-  console.log('image: ', img);
   return (
     <main id="home-page">
       <section className="showcase">
         <div className="container-fluid pos-rel">
           {/* prettier-ignore */}
-          <Image src={img} layout="fill" objectFit='contain' quality={100} priority/>
+          <Image src={img} layout="fill" objectFit='contain' quality={100} alt='showcase image' priority/>
         </div>
       </section>
 
@@ -37,7 +35,11 @@ export default function Home() {
 
           <Carousel>
             {data.map(item => (
-              <ProductCard key={item.id} data={item} />
+              <ProductCard
+                containerStyles={{ width: 'initial' }}
+                key={item.id}
+                data={item}
+              />
             ))}
           </Carousel>
         </div>
@@ -122,3 +124,39 @@ export default function Home() {
     </main>
   );
 }
+
+// PLAN //
+/**
+ * Sign up page ✅
+ * Send name, email and password of user to my backend next api with axios ✅
+ * Store user data in my database ✅
+ * -> KEEP watching videos ✅
+ * maybe, I will get authorised or unauthorised state (in context) and change menu showing favourites ✅
+ * Video: Authorization token ✅
+ * Block some protected (favourites) pages ✅
+ *
+ * Read up whole documentation [only necessary parts (interesting parts ;) )] ✅
+ * TypeScript basics ✅
+ */
+
+/**
+ *
+ * responsive: header
+ * -> mobile menu ✅
+ * -> footer ✅
+ * -> rest layout ✅
+ * -> home page ✅
+ * -> catalog pages ✅
+ * -> 🔅🔆🔶🔸💎💍💠🔹🔷
+ * -> product page ✅
+ * -> cart page 
+ * -> sign-in-sign-up page 
+ *
+ * -> Deployment
+ *
+ * -> TypeScript React 70% ✅
+ *
+ *
+ *
+ *
+ */

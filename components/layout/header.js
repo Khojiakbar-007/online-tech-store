@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import CustomButton from '../shared/button';
 
 import { AiFillFacebook, AiFillInstagram } from 'react-icons/ai';
 import Logo from '../../public/Logo.svg';
-import SearchIcon from '../../public/icons/search.svg';
 import CartIcon from './cart-icon';
 import UserIcon from './user-icon';
+import MobileMenu from './mobile-menu';
 
 const customStyles = {
   fontStyle: 'normal',
@@ -20,14 +20,14 @@ function Header() {
     <>
       <header id="top-header">
         <div className="container-fluid fb-row">
-          <div className="left">
+          <div className="time">
             <span>Mon-Sun: </span>
             0:00 AM - 12:00 PM
           </div>
 
-          <div className="center">Uzbekistan, city Tashkent</div>
+          <div className="location">Uzbekistan, city Tashkent</div>
 
-          <div className="right fb-row">
+          <div className="call-us fb-row">
             <span>Call Us: (00) 1234 5678</span>
 
             <div className="icons">
@@ -41,10 +41,14 @@ function Header() {
       <header id="main-header">
         <nav>
           <div className={`container-fluid fb-row`}>
-            <div className="logo">
-              <CustomButton href="/" type="icon-button">
-                <Logo />
-              </CustomButton>
+            <div className="logo-and-menu fb-row">
+              <div className="logo">
+                <CustomButton href="/" type="icon-button">
+                  <Logo />
+                </CustomButton>
+              </div>
+
+              <MobileMenu/>
             </div>
 
             {/* prettier-ignore */}
@@ -55,10 +59,7 @@ function Header() {
               <CustomButton href="/catalog/monitors" extraStyles={customStyles}>Monitors</CustomButton>
             </div>
 
-            <div className="search-cart fb-row">
-              <CustomButton type="icon-button">
-                <SearchIcon />
-              </CustomButton>
+            <div className="cart-usericon fb-row">
               <CartIcon />
               <UserIcon />
             </div>
@@ -69,4 +70,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

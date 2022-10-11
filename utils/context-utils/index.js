@@ -44,7 +44,7 @@ const useAddItemToCart = () => {
   return addToCart;
 };
 
-const useUpdateItemInCart = (id, quantity) => {
+const useUpdateItemInCart = () => {
   const { setCartItems } = useCartActionsContext();
   const { cartItems } = useCartContext();
 

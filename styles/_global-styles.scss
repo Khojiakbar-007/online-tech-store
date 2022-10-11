@@ -61,8 +61,8 @@
     padding  : 0 20px 0;
 
     @include Media($screen-large-phone) {
-        padding-left : 14px;
-        padding-right: 14px;
+        padding-left : 20px;
+        padding-right: 20px;
     }
 
     &--2 {
@@ -80,6 +80,11 @@
             padding-left : 24px;
             padding-right: 24px;
         }
+    }
+
+    @include Media($screen-small-phone) {
+        padding-left : 15px;
+        padding-right: 15px;
     }
 }
 
@@ -145,4 +150,46 @@ h4 {
     flex-direction    : column;
     // justify-content: ;
     align-items       : center;
+}
+
+.fb {
+    &--w {
+        flex-wrap: wrap;
+    }
+
+    &--jc-c {
+        justify-content: center;
+    }
+
+    &--jc-saround {
+        justify-content: space-around;
+    }
+
+    &--jc-sbet {
+        justify-content: space-between;
+    }
+
+    &--jc-start {
+        justify-content: flex-start;
+    }
+
+    &--jc-end {
+        justify-content: flex-end;
+    }
+
+    &--ai-c {
+        align-items: center;
+    }
+
+    &--ai-start {
+        align-items: flex-start;
+    }
+
+    &--ai-end {
+        align-items: flex-end;
+    }
+
+    &--ai-stch {
+        align-items: stretch;
+    }
 }

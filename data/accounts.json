@@ -1,1 +1,12 @@
-[{"name":"Dekster","email":"crema.demo@gmail.com","password":"$2a$12$G7RlpmLwITggylfxYokfpu1MbA04x5KinzI3o6TDuFWvu6p9GDdF6"},{"name":"Henry","email":"qwertyuiop1234567@gmail.com","password":"$2a$12$IyFF0MEH2wjTYUhT0poXxeG312IPTpyD.gVOhygwmvd9cHoHbofve"}]
+[
+  {
+    "name": "Dekster",
+    "email": "crema.demo@gmail.com",
+    "password": "$2a$12$G7RlpmLwITggylfxYokfpu1MbA04x5KinzI3o6TDuFWvu6p9GDdF6"
+  },
+  {
+    "name": "Henry",
+    "email": "qwertyuiop1234567@gmail.com",
+    "password": "$2a$12$IyFF0MEH2wjTYUhT0poXxeG312IPTpyD.gVOhygwmvd9cHoHbofve"
+  }
+]

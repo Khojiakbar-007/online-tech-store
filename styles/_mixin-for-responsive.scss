@@ -1,7 +1,7 @@
 /*  media  */
 
-@mixin Media($device) {
-    @media screen and (max-width : $device) {
+@mixin Media($device-width) {
+    @media screen and (max-width : $device-width) {
         @content;
     }
 }

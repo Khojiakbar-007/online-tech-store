@@ -1,19 +1,26 @@
 #home-page {
     padding: 0 20px;
 
-    .showcase .container-fluid {
-        width     : 100%;
-        min-height: 82px;
-        height    : 328px;
+    width: 100%;
 
-        padding: 0;
+    .showcase {
+        padding      : 0 20px;
+        margin-bottom: 37px;
+
+        .container-fluid {
+            padding-top: 23.5%;
+
+            span {
+                padding-top: 23.5% !important;
+            }
+        }
     }
 
     .new-products {
         margin-bottom: 45px;
 
         h3 {
-            margin: 37px 0 25px;
+            margin-bottom: 25px;
         }
     }
 
@@ -22,6 +29,8 @@
     }
 
     .showcase-products {
+        overflow: hidden;
+
         .product-row {
             margin-bottom: 31px;
         }
@@ -33,6 +42,26 @@
         .logo {
             width : 194px;
             height: 150px;
+        }
+    }
+
+    @include Media($screen-large-phone) {
+        padding: 0;
+
+        .showcase {
+            margin : 16px 0 19px;
+            padding: 0 20px;
+        }
+    }
+
+    @include Media($screen-small-phone) {
+        .showcase {
+            margin : 12px 0 19px;
+            padding: 0 15px;
+        }
+
+        .showcase-products .product-row {
+            flex-wrap: wrap;
         }
     }
 }

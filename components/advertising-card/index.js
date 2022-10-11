@@ -6,7 +6,7 @@ import Image from 'next/image';
 function AdvertisingCard({ imgUrl, title, link }) {
   return (
     <div
-      className={styles.AdvertisingCardBox}
+      className={styles.AdvertisingCardBox + ' ' + 'advertising-card'}
     >
       <div className={styles.BackImage}>
         <Image layout='fill' objectFit='cover' objectPosition='center' src={imgUrl}/>

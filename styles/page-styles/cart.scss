@@ -5,7 +5,7 @@
         display       : flex;
         flex-direction: column;
         align-items   : center;
-        width     : 747px;
+        width         : 747px;
     }
 
     h2 {
@@ -13,19 +13,20 @@
     }
 
     h3 {
-        margin: 20px 0 20px;
+        margin    : 20px 0 20px;
         text-align: right;
+
         .total-price {
             font-weight: 500;
-            color: rgba(0, 0, 0, 0.789)
+            color      : rgba(0, 0, 0, 0.789)
         }
     }
 
     .items-table {
         min-height: 226px;
-        height   : var(--table-height);
-        width: 747px;
-        display  : flex;
+        height    : var(--table-height);
+        width     : 747px;
+        display   : flex;
 
         .MuiDataGrid-root {
             border: none;
@@ -128,5 +129,35 @@
         // .MuiDataGrid-virtualScroller {
         //     height: 100% !important;
         // }
+    }
+}
+
+.mobile-row {
+    width        : 375px;
+    border-bottom: 1px solid $color-6;
+
+    .img-desc {
+        gap: 18px;
+
+        .desc {
+            font-weight: 400;
+            font-size  : 10px;
+            line-height: 15px;
+        }
+    }
+
+    .price-qty-subtot {
+        gap        : 45px;
+        font-weight: 600;
+
+        span {
+            font-size  : 11px;
+            line-height: 16px;
+        }
+
+        p {
+            font-size  : 12px;
+            line-height: 18px;
+        }
     }
 }

@@ -8,6 +8,11 @@ import { verifyPassword } from '../../../utils/api-utils';
 export const authConfig = {
   providers: [
     CredentialsProvider({
+      name: 'Credentials',
+      credentials: {
+        username: { label: 'Username', type: 'text', placeholder: '' },
+        password: { label: 'Password', type: 'password' },
+      },
       authorize: async credentials => {
         const { email, password } = credentials;
         const filePath = path.join(process.cwd(), 'data', 'accounts.json');

@@ -20,13 +20,13 @@ body {
     .container-fluid {
         height: 44px;
 
-        .left {
+        .time {
             span {
                 color: var(--color-5);
             }
         }
 
-        .right {
+        .call-us {
             span {
                 margin-right: 10px;
             }
@@ -35,8 +35,25 @@ body {
                 font-size: 20px;
             }
         }
+
+        @include Media($screen-large-phone) {
+            height     : 40px;
+            font-weight: 600;
+            font-size  : 11px;
+            line-height: 16px;
+
+            .time {
+                display: none;
+            }
+
+            .call-us .icons {
+                display: none;
+            }
+        }
     }
 }
+
+// main-header start
 
 #main-header {
     position: sticky;
@@ -52,8 +69,12 @@ body {
             height: 92px;
         }
 
+        .mobile-menu {
+            display: none;
+        }
+
         .logo {
-            width: 112px;
+            width: 92px;
         }
 
         .main-nav {
@@ -62,7 +83,7 @@ body {
             }
         }
 
-        .search-cart {
+        .cart-usericon {
 
             // mui component class
             .BaseBadge-badge {
@@ -75,22 +96,79 @@ body {
                 font-size  : 10px;
                 line-height: 15px;
             }
+
+            .user-menu {
+                margin-left: 15px;
+                cursor     : pointer;
+            }
         }
+
+    }
+
+    @include Media($screen-tablet) {
+        nav .container-fluid {
+            height: 64px;
+        }
+    }
+
+    @include Media($screen-large-phone) {
+        nav .container-fluid {
+
+            .logo-and-menu {
+                gap: 15px;
+
+                .logo {
+                    width: initial;
+                }
+            }
+
+            .mobile-menu {
+                display: block;
+
+                svg {
+                    font-size     : 26px;
+                    vertical-align: middle;
+                }
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+    }
+}
+
+.mobile-menu__drawer {
+    & .MuiPaper-root {
+        width  : 300px;
+        padding: 15px;
+    }
+
+    &__top-logo {
+        border-bottom : 1px solid $color-6;
+        padding-bottom: 6px;
+    }
+
+    &__nav {
+        display       : flex;
+        flex-direction: column;
     }
 }
 
 .user-menu-modal {
     .MuiMenuItem-root {
-        background-color: #fff;
+        background-color: $color-11
+            /* rgb(119, 5, 249) */
+        ;
 
     }
 }
 
+// main-header end
+
 #placeholder--2 {
     background: #030303;
     color     : var(--color-11);
-
-
 
     .text {
         margin-top   : 57px;
@@ -99,14 +177,14 @@ body {
         z-index      : 2;
 
         h2 {
-            font-style : normal;
-            font-weight: 500;
-            font-size  : 44px;
-            line-height: 58px;
+            font-style   : normal;
+            font-weight  : 500;
+            font-size    : 44px;
+            line-height  : 58px;
+            margin-bottom: 45px;
         }
 
         p {
-            margin-top : 45px;
             font-style : normal;
             font-weight: 300;
             font-size  : 18px;
@@ -115,7 +193,7 @@ body {
     }
 
     .image-container {
-        margin-left: -2 00px;
+        margin-left: -200px;
         z-index    : 1;
 
         position: relative;
@@ -129,11 +207,53 @@ body {
             background: linear-gradient(90deg, rgba(20, 21, 23, 0) 85%, #0E0F10 93%, #030303 100%), linear-gradient(180deg, rgba(20, 21, 23, 0) 90%, #0E0F10 95%, #030303 100%), linear-gradient(0deg, rgba(20, 21, 23, 0) 90%, #0E0F10 95%, #030303 100%);
         }
     }
+
+    @include Media($screen-tablet) {
+        .text {
+            max-width: 326px;
+
+            h2 {
+                font-size    : 32px;
+                line-height  : 132.5%;
+                margin-bottom: 13px;
+            }
+
+            p {
+                font-size  : 14px;
+                line-height: 20px;
+            }
+        }
+    }
+
+    @include Media($screen-small-phone) {
+        .container-fluid--2 {
+            flex-direction: column-reverse;
+
+            .text {
+                margin-top: -30px;
+            }
+
+            .image-container {
+                margin-left : -20%;
+                margin-right: -10%;
+
+                img {
+                    left: -20px !important
+                }
+            }
+        }
+    }
 }
 
 #placeholder {
     padding         : 60px 0 43px;
     background-color: $color-1;
+
+    .container-fluid {
+        row-gap   : 50px;
+        column-gap: 30px;
+
+    }
 
     .mini-card {
         text-align: center;
@@ -199,9 +319,8 @@ body {
     }
 
     .payment-methods {
-        >span:not(:last-of-type) {
-            margin-right: 10px !important;
-        }
+        gap      : 10px;
+        font-size: 10px;
     }
 
     .bottom-trash {
@@ -212,5 +331,76 @@ body {
         }
     }
 
+    @include Media($screen-tablet) {
+        .newsletter-signup {
+            margin: 0;
 
+            h2 {
+                font-size    : 18px;
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            .MuiButton-root {
+                font-size: 13px;
+            }
+        }
+
+        .bottom-nav {
+            flex-direction: column-reverse;
+            align-items   : stretch;
+
+            span {
+                font-size    : 11px;
+                border-bottom: 1px solid $color-6;
+                display      : block;
+                margin       : 15px 0;
+                padding      : 10px 0;
+            }
+
+            ul {
+                font-size: 12px;
+            }
+        }
+
+        .bottom-trash {
+            flex-wrap: wrap;
+
+            .logos {
+                width: fit-content;
+            }
+
+            .payment-methods {
+                order          : 2;
+                margin-top     : 20px;
+                width          : 100%;
+                justify-content: center;
+            }
+        }
+    }
+
+    @include Media($screen-large-phone) {
+        .newsletter-signup {
+            flex-direction: column;
+
+            .text {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    @include Media($screen-small-phone) {
+        .email {
+            display: flex;
+
+            .MuiTextField-root {
+                max-width: 186px;
+                width    : initial;
+                flex-grow: 1;
+            }
+        }
+    }
 }

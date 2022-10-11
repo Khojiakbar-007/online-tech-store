@@ -1,6 +1,6 @@
 import DeleteIcon from '../../public/icons/delete--big.svg';
 import { TextField } from '@mui/material';
-import { useDebouncedCallback } from 'use-debounce';
+import Image from 'next/image';
 
 export const columns = (removeItem, updateCartDebouncedly) => [
   {
@@ -8,12 +8,23 @@ export const columns = (removeItem, updateCartDebouncedly) => [
     headerName: 'Item',
     renderCell: params => {
       return (
-        <img
-          // style={{ marginLeft: '-18px' }}
-          src={params.row.imgUrl}
-          width="120px"
-          alt="tech item"
-        />
+        <span
+          style={{
+            position: 'relative',
+            display: 'inline-block',
+            paddingTop: '100%',
+            width: '120px'
+          }}
+        >
+          <Image
+            // style={{ marginLeft: '-18px' }}
+            layout="fill"
+            objectPosition="center"
+            objectFit="contain"
+            src={params.row.imgUrl}
+            alt="tech item"
+          />
+        </span>
       );
     },
   },

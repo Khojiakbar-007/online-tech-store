@@ -13,7 +13,7 @@ function CartItems({ cartItems }) {
     <>
       {cartItems.length > 0 ? (
         <Suspense fallback={<Items cartItems={cartItems} />}>
-          {console.log('suspense is working')}
+          {/* {console.log('suspense is working')} */}
           <DynamicScrollBar className="scroll-bar">
             <Items cartItems={cartItems} />
           </DynamicScrollBar>

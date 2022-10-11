@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import { TiUser } from 'react-icons/ti';
 import Menu from '@mui/material/Menu';
@@ -22,7 +22,7 @@ function UserIcon() {
   };
 
   return (
-    <div className="cart-menu">
+    <div className="user-menu">
       <Avatar
         sx={{
           backgroundColor: isSignedIn ? 'var(--color-8)' : 'var(--color-3)',
@@ -59,4 +59,4 @@ function UserIcon() {
   );
 }
 
-export default UserIcon;
+export default memo(UserIcon);

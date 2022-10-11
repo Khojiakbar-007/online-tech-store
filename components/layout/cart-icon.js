@@ -1,6 +1,6 @@
 import CustomButton from '../shared/button';
 import ShoppingCart from '../../public/icons/shopping-cart.svg';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { Badge, Menu } from '@mui/material';
 import CartDropDown from '../cart-dropdown';
 import { useCartContext } from '../../context-provider';
@@ -37,4 +37,4 @@ const CartIcon = () => {
   );
 };
 
-export default CartIcon;
+export default memo(CartIcon);

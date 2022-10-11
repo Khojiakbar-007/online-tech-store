@@ -6,7 +6,7 @@ import { MdSavings } from "react-icons/md";
 function Placeholder() {
   return (
     <section id="placeholder">
-      <div className="container-fluid fb-row fb-row--spacer">
+      <div className="container-fluid fb-row fb-row--spacer fb--w">
         <div className="mini-card fb-col">
           <Avatar sx={{ backgroundColor: "var(--color-3)" }}>
             <BiSupport color="white" />
