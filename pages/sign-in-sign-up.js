@@ -13,7 +13,7 @@ const SignInSignUpPage = () => {
   const { replace } = useRouter();
   useEffect(() => {
     if (status === 'authenticated') replace('/');
-  }, [status]);
+  }, [status, replace]);
 
   return (
     <WithLoadingSpinner loading={status === 'loading'}>
@@ -41,6 +41,7 @@ export async function getServerSideProps({ req, res }) {
   );
 
   console.log('sign-in-&-sign-up page is working');
+  console.log('session: ', session)
   
 
   if (session)
